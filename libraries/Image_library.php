@@ -52,7 +52,7 @@ class Image_library
 			$images = $this->categories_images_m->get_all();
 			foreach($images as $image)
 			{
-				$ar = Files::delete_file($image->file_id);
+				$ar = Files::delete_file($image->file_id,'nitrocart_categories');
 			}
 		}
 	}
@@ -76,7 +76,7 @@ class Image_library
 		{
 			if($cat->file_id != '')
 			{
-				Files::delete_file($cat->file_id);
+				Files::delete_file($cat->file_id,'nitrocart_categories');
 			}
 		}
 

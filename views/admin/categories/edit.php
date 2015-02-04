@@ -38,9 +38,6 @@
 										<?php endif; ?>
 
 
-
-
-
 									<a class='btn gray' href="admin/nitrocart_categories/categories/edit/<?php echo $parent_cat2->parent_id;?>"><?php echo HelperGet_category_name($parent_cat2->parent_id);?></a>
 								<?php endif; ?>
 
@@ -74,11 +71,6 @@
                 <?php else: ?>
                     <a title='Click to Toggle' href='admin/nitrocart_categories/categories/visibility/<?php echo $id;?>/on' class='tooltip-s button edit_button'>Visible</a>
                 <?php endif;?>
-
-                <!--
-                $onoff = array(0=>'Hidden',1=>'Visible');
-                echo $onoff[$hidden];
-                -->
 
            </div>
         </li>

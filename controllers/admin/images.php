@@ -89,9 +89,11 @@ class Images extends Admin_Controller
 			//uploads images to files module
 			$upload = Files::upload($folder_id, $_file['name'], $key );
 
+
 			// Get the Image ID
 	    	$file_id = $upload['data']['id'];
 
+	    	Files::alter_permissions($file_id,'nitrocart_categories',0);
 
 	    	// Assign the image to this product
 	    	// Add/update the category row with te file id
@@ -121,7 +123,7 @@ class Images extends Admin_Controller
 		$this->categories_admin_m->clear_image($category_id);
 
 		$this->load->library('files/files');
-		$ar = Files::delete_file($file_id);
+		$ar = Files::delete_file($file_id,'nitrocart_categories');
 
 		$return_array['status'] = 'success';
 

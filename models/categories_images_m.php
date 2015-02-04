@@ -31,16 +31,17 @@ class Categories_images_m extends MY_Model {
 	public function create_file_folder()
 	{
 
-		$to_insert = array(
-				'parent_id' => 0,
-				'slug' => 'shop_category_images', //generate_slug()
-				'name' => 'CategoryImages',
-				'location' => 'local',
-				'remote_container' => '',
-				'date_added' => now(),
-				'sort' => now(), //will implement the ordering in later version
-				'hidden' => 1,
-		);
+		$to_insert = 
+		[
+			'parent_id' => 0,
+			'slug' => 'shop_category_images', //generate_slug()
+			'name' => 'Category Images',
+			'location' => 'local',
+			'remote_container' => '',
+			'date_added' => now(),
+			'sort' => now(), //will implement the ordering in later version
+			'hidden' => 0,
+		];
 
 
 		return $this->db->insert('file_folders',$to_insert); //returns id
@@ -49,7 +50,7 @@ class Categories_images_m extends MY_Model {
 
 	public function get_available_file_folders()
 	{
-		return  $this->db->where('parent_id',0)->where('slug','shop_category_images')->where('name','CategoryImages')->where('hidden',1)->get('file_folders')->row();
+		return  $this->db->where('parent_id',0)->where('slug','shop_category_images')->where('name','Category Images')->where('hidden',1)->get('file_folders')->row();
 	}
 
 
